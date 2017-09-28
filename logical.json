@@ -1,0 +1,22 @@
+[
+  {
+    "definition": "A number is added 9, divided by 3, subtracted 2, and multiplied by 4 to give an answer of 8. What was the starting number?",
+    "term": "3"
+  },
+  {
+    "definition": "An even number and an odd number are multiplied together, added 6, divided by 5, and subtracted 3 to give an answer of 1. What was the odd number?",
+    "term": "7"
+  },
+  {
+    "definition": "What number is one half of one tenth of one quarter of 400?",
+    "term": "5"
+  },
+  {
+    "definition": "If the day after tomorrow is five days after Sunday then what day is it today?",
+    "term": "Wednesday"
+  },
+  {
+    "definition": "Given 1, 3, 7, 15, 31. What is the next number in the sequence?",
+    "term": "63"
+  }
+]
