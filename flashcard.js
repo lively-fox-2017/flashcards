@@ -1,10 +1,12 @@
-Class Flashcard {
+const Controller=require('./controller');
+
+class Flashcard {
   constructor() {}
-  
+
   choice(deck) {
     if(deck.length > 0) {
-      let game = new Controller(deck);
-      //your code here
+      let game = new Controller();
+        game.selectGame(deck);
     } else {
       console.log("Please input choice deck");
     }
