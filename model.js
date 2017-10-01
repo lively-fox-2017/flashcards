@@ -51,19 +51,8 @@ class Model {
 	}
 
 	static skipQuestion(session) {
-		let randomizeQuestionIdx = Math.round(Math.random() * (session.deck.length - 1));
-		let randomQuestion = session.deck.splice(randomizeQuestionIdx, 1)[0];
 		session.deck.push(session.currentQuestion);
-		let newSession = {
-			deck: session.deck,
-			correct: session.correct,
-			miss: session.miss,
-			currentQuestion: randomQuestion,
-			isGameOver: session.isGameOver,
-			isNoMoreQuestion: session.isNoMoreQuestion
-		};
-
-		return newSession;
+		return session;
 	}
 
 	static evaluateAnswer(obj) {

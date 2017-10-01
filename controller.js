@@ -11,16 +11,6 @@ class Controller {
 					});
 	}
 
-	static draw(session) {
-		return new Promise(resolve => {
-			let newSession = Model.randomizeQuestion(session);
-			View.showQuestion(newSession, obj => {
-				newSession = Model.evaluateAnswer(obj);
-				Model.writeSession(newSession);
-			});
-		});
-	}
-
 	static play() {
 		let newSession;
 
@@ -36,9 +26,15 @@ class Controller {
 						let result = Model.evaluateAnswer(obj);
 						newSession = result[0];
 
-						if (result[1] === 'skipped') View.jawabanSkip(newSession);
-						else if (result[1] === 'benar') View.jawabanBenar(newSession);
-						else View.jawabanSalah(newSession);
+						if (result[1] === 'skipped') {
+							View.jawabanSkip(newSession);
+						}
+						else if (result[1] === 'benar') {
+							View.jawabanBenar(newSession);
+						}
+						else { 
+							View.jawabanSalah(newSession);
+						}
 						return Model.writeSession(newSession);
 					})
 					.then(() => {
