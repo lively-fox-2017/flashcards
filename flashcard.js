@@ -6,8 +6,13 @@ class Flashcard {
 
   choice(deck) {
     if(deck.length > 0) {
-      let game = new Controller(deck);
-      game.run();
+      if(deck=='social'||deck=='logical'){
+        //console.log(asdas);
+        let game = new Controller(deck);
+        game.run();
+      }else{
+        console.log('wrong deck');
+      }
       //your code here
     } else {
       console.log("Please input choice deck");

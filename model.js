@@ -6,8 +6,20 @@ class Model {
     this.deck = this.deckBuild(deck[0]);
     this.answeredQuestion = this._setEmptyAnswered();
     this.indexNow = 0;
+    this.faileAttempt = 0;
     //console.log(this.returnQuestion(1));
     //console.log(this.answeredQuestion);
+  }
+
+  wrongAnswer(){
+    this.faileAttempt++;
+  }
+
+  isLost(){
+    if(this.faileAttempt>3){
+      return true;
+    }
+    return false;
   }
 
   markAsAnswered(index){
@@ -27,8 +39,8 @@ class Model {
   }
 
   isAllAnswered(){
-    for(let i in this.deck){
-      if(this.deck[i]==false){
+    for(let i in this.answeredQuestion){
+      if(!this.answeredQuestion[i]){
         return false;
       }
     }
@@ -37,7 +49,7 @@ class Model {
 
   nextQuestion(){
     let nextIndex = this.indexNow;
-    if(this.isAllAnswered()){
+    if(!this.isAllAnswered()){
       while(true){
         if(nextIndex>=this.deck.length){
           nextIndex=0;
