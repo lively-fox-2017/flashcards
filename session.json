@@ -1,0 +1,20 @@
+{
+    "deck": [
+        {
+            "definition": "An even number and an odd number are multiplied together, added 6, divided by 5, and subtracted 3 to give an answer of 1. What was the odd number?",
+            "term": "7"
+        },
+        {
+            "definition": "If the day after tomorrow is five days after Sunday then what day is it today?",
+            "term": "Wednesday"
+        }
+    ],
+    "correct": 0,
+    "miss": -3,
+    "currentQuestion": {
+        "definition": "Given 1, 3, 7, 15, 31. What is the next number in the sequence?",
+        "term": "63"
+    },
+    "isGameOver": false,
+    "isNoMoreQuestion": false
+}
