@@ -1,9 +1,18 @@
-Class Flashcard {
+'use strict'
+const Controller = require('./controller');
+
+class Flashcard {
   constructor() {}
-  
+
   choice(deck) {
     if(deck.length > 0) {
-      let game = new Controller(deck);
+      if(deck=='social'||deck=='logical'){
+        //console.log(asdas);
+        let game = new Controller(deck);
+        game.run();
+      }else{
+        console.log('wrong deck');
+      }
       //your code here
     } else {
       console.log("Please input choice deck");
