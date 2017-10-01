@@ -1,17 +1,15 @@
-Class Flashcard {
-  constructor() {}
-  
-  choice(deck) {
-    if(deck.length > 0) {
-      let game = new Controller(deck);
-      //your code here
-    } else {
-      console.log("Please input choice deck");
+"use strict"
+
+const Controller = require('./controller');
+const rl = require('readline');
+
+class Flashcard {
+    static start() {
+        const deck = process.argv.slice(2)[0];
+        Controller.start(deck).then(() => {
+          Controller.play()
+        });
     }
-  }
 }
 
-let deck = process.argv.slice(2)
-
-let flashcard = new Flashcard();
-flashcard.choice(deck)
+Flashcard.start();

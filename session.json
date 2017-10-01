@@ -1,0 +1,11 @@
+{
+    "deck": [],
+    "correct": 6,
+    "miss": 0,
+    "currentQuestion": {
+        "definition": "Pada tahun 1602,Belanda mendirikan usaha dagang yang diberi nama",
+        "term": "VOC"
+    },
+    "isGameOver": false,
+    "isNoMoreQuestion": false
+}
