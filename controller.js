@@ -17,24 +17,29 @@ class Controller {
   run(){
     //console.log(this.view);
     rl.question(this.view.outputQuestion(this.model.returnQuestion(this.model.indexNow)), (answer)=>{
-      if(this.model.checkAnswer(answer, this.model.indexNow)){
-        this.model.markAsAnswered(this.model.indexNow);
+      if(answer=='skip'){
         this.model.nextQuestion();
+        this.run();
       }else{
-        this.model.wrongAnswer();
-        this.view.wrongAnswer(this.model.faileAttempt);        
-      }
-
-      if(!this.model.isLost()){
-        if(this.model.isAllAnswered()){
-          rl.close();
-          this.finished();
+        if(this.model.checkAnswer(answer, this.model.indexNow)){
+          this.model.markAsAnswered(this.model.indexNow);
+          this.model.nextQuestion();
         }else{
-          this.run();
+          this.model.wrongAnswer();
+          this.view.wrongAnswer(this.model.faileAttempt);
         }
-      }else{
-        rl.close();
-        this.lost();
+
+        if(!this.model.isLost()){
+          if(this.model.isAllAnswered()){
+            rl.close();
+            this.finished();
+          }else{
+            this.run();
+          }
+        }else{
+          rl.close();
+          this.lost();
+        }
       }
       //rl.close();
 
